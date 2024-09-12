@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-extrabold leading-none text-primary;
+  font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79,
+    'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0,
+    'wdth' 151;
+}
+
+h1 {
+  @apply text-[30px];
+}
+
+h2 {
+  @apply text-[24px];
+}
+
+h3 {
+  @apply text-[18px];
+}
+
+h4,
+p {
+  @apply text-[16px];
+}
+
+p {
+  @apply leading-[18.75px] font-medium;
+}
+
+p.medium {
+  @apply text-[14px] leading-[16.41px];
+}
+
+p.small {
+  @apply text-[12px] leading-[14.06px];
+}
