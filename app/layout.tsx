@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Roboto_Flex } from 'next/font/google'
-import './styles/tailwind.css'
 
-import './styles/index.css'
+import '@/styles/tailwind.css'
+// keep styles order
+import '@/styles/index.css'
 
 const font = Roboto_Flex({
   subsets: ['latin'],
