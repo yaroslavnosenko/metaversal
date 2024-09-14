@@ -14,6 +14,7 @@ export const ProfileMinCard = () => {
         <h4 className="sm:truncate">Kathryn Murphy Longer Name</h4>
         <p className="small">@emilys</p>
       </div>
+      <button className="btn-outline">Follow</button>
     </div>
   )
 }

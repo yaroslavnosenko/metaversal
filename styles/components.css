@@ -1,0 +1,31 @@
+svg {
+  display: block;
+}
+
+main {
+  @apply max-w-[700px] mx-auto px-4 py-8 grid grid-cols-1 gap-12;
+}
+
+section {
+  @apply grid grid-cols-1 gap-4;
+}
+
+.avatar {
+  @apply rounded-full h-10 w-10 hover:opacity-50 cursor-pointer;
+}
+
+.card {
+  @apply border-[1px] border-border rounded-2xl bg-white;
+}
+
+button {
+  @apply leading-[18.75px] font-medium text-[16px] rounded-full cursor-pointer  h-[35px] px-[13px] box-border;
+}
+
+button.btn-outline {
+  @apply text-accent border-[1px] border-accent hover:border-focus hover:text-focus  hover:bg-light leading-[18.75px];
+}
+
+button.btn-solid {
+  @apply bg-gradient-to-b from-[#FF0073] via-[#811AB8] to-[#4426D9] text-white font-bold;
+}

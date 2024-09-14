@@ -8,11 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        secondary: 'var(--secondary)',
-        primary: 'var(--primary)',
-        accent: 'var(--accent)',
-        border: 'var(--border)',
+        background: '#f9fafa',
+        border: '#e4e7e8',
+        primary: '#141c24',
+        secondary: '#5c6970',
+        accent: '#4426d9',
+        focus: '#361fad',
+        light: '#ECE9FB',
         slate: {
           150: '#dfdfdf',
         },

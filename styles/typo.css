@@ -5,9 +5,7 @@ h4,
 h5,
 h6 {
   @apply font-extrabold leading-none text-primary;
-  font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79,
-    'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0,
-    'wdth' 151;
+  font-variation-settings: 'wght' 800, 'wdth' 150;
 }
 
 h1 {

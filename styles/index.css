@@ -1,27 +1,2 @@
-@import 'vars.css';
 @import 'typo.css';
-
-body {
-  color: var(--secondary);
-  background: var(--background);
-}
-
-svg {
-  display: block;
-}
-
-main {
-  @apply max-w-[700px] mx-auto px-4 py-8 grid grid-cols-1 gap-12;
-}
-
-section {
-  @apply grid grid-cols-1 gap-4;
-}
-
-.avatar {
-  @apply rounded-full h-10 w-10 hover:opacity-50 cursor-pointer;
-}
-
-.card {
-  @apply border-[1px] border-border rounded-2xl bg-white;
-}
+@import 'components.css';
