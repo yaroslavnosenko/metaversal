@@ -34,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={font.className}>
-      <body className="bg-background text-secondary">{children}</body>
+      <body className="antialiased bg-background text-secondary pt-14">
+        {children}
+      </body>
     </html>
   )
 }
