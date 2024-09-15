@@ -8,19 +8,6 @@ import '@/styles/index.css'
 const font = Roboto_Flex({
   subsets: ['latin'],
   display: 'swap',
-  axes: [
-    'GRAD',
-    'XOPQ',
-    'XTRA',
-    'YOPQ',
-    'YTAS',
-    'YTDE',
-    'YTFI',
-    'YTLC',
-    'YTUC',
-    'slnt',
-    'wdth',
-  ],
 })
 
 export const metadata: Metadata = {

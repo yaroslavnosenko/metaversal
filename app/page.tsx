@@ -1,12 +1,24 @@
 'use client'
 
-import { Header, PostCard, ProfileMinCard } from '@/components'
+import { Error, Header, PostCard, ProfileMinCard } from '@/components'
 import { useFollow, useRecent, useSuggested } from '@/hooks'
 
 export default function FeedPage() {
-  const { data: follow, isLoading: followLoading } = useFollow()
-  const { data: suggested, isLoading: suggestedLoading } = useSuggested()
-  const { data: recent, isLoading: recentLoading } = useRecent()
+  const {
+    data: suggested,
+    error: suggestedError,
+    isLoading: suggestedLoading,
+  } = useSuggested()
+  const {
+    data: follow,
+    isLoading: followLoading,
+    error: followError,
+  } = useFollow()
+  const {
+    data: recent,
+    isLoading: recentLoading,
+    error: recentError,
+  } = useRecent()
 
   return (
     <>
@@ -19,6 +31,9 @@ export default function FeedPage() {
             suggested.map(([post, user]) => (
               <PostCard key={post.id} post={post} user={user} />
             ))}
+          {!suggestedLoading && suggestedError && (
+            <Error message="Error loading posts" />
+          )}
         </section>
         <section>
           <h2 className="text-black">Who to follow</h2>
@@ -28,6 +43,11 @@ export default function FeedPage() {
               follow.map((user) => (
                 <ProfileMinCard key={user.id} user={user} />
               ))}
+            {!followLoading && followError && (
+              <div className="col-span-2">
+                <Error message="Error loading users" />
+              </div>
+            )}
           </div>
         </section>
         <section>
@@ -37,6 +57,9 @@ export default function FeedPage() {
             recent.map(([post, user]) => (
               <PostCard key={user.id} user={user} post={post} />
             ))}
+          {!recentLoading && recentError && (
+            <Error message="Error loading posts" />
+          )}
         </section>
       </main>
     </>
