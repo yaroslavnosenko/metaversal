@@ -15,7 +15,7 @@ section {
 }
 
 .card {
-  @apply border-[1px] border-border rounded-2xl bg-white;
+  @apply border border-border rounded-2xl bg-white;
 }
 
 button {
@@ -23,9 +23,15 @@ button {
 }
 
 button.btn-outline {
-  @apply text-accent border-[1px] border-accent hover:border-focus hover:text-focus  hover:bg-light leading-[18.75px];
+  @apply text-accent border border-accent hover:border-focus hover:text-focus  hover:bg-light leading-[18.75px];
 }
 
 button.btn-solid {
-  @apply bg-gradient-to-b from-[#FF0073] via-[#811AB8] to-[#4426D9] text-white font-bold;
+  @apply bg-gradient-to-b from-[#FF0073] via-[#811AB8] to-[#4426D9] text-white font-bold bg-no-repeat;
+  background-position-y: -35px;
+  background-size: 100% 70px;
+}
+
+button.btn-solid:hover {
+  background-position-y: -25px;
 }
