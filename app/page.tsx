@@ -1,6 +1,7 @@
 'use client'
 
 import { Error, Header, PostCard, ProfileMinCard } from '@/components'
+import { PostCardSkeleton, ProfileMinSkeleton } from '@/components/skeletons'
 import { useFollow, useRecent, useSuggested } from '@/hooks'
 
 export default function FeedPage() {
@@ -34,6 +35,12 @@ export default function FeedPage() {
           {!suggestedLoading && suggestedError && (
             <Error message="Error loading posts" />
           )}
+          {suggestedLoading && (
+            <>
+              <PostCardSkeleton />
+              <PostCardSkeleton />
+            </>
+          )}
         </section>
         <section>
           <h2 className="text-black">Who to follow</h2>
@@ -44,9 +51,17 @@ export default function FeedPage() {
                 <ProfileMinCard key={user.id} user={user} />
               ))}
             {!followLoading && followError && (
-              <div className="col-span-2">
+              <div className="sm:col-span-2">
                 <Error message="Error loading users" />
               </div>
+            )}
+            {followLoading && (
+              <>
+                <ProfileMinSkeleton />
+                <ProfileMinSkeleton />
+                <ProfileMinSkeleton />
+                <ProfileMinSkeleton />
+              </>
             )}
           </div>
         </section>
@@ -59,6 +74,15 @@ export default function FeedPage() {
             ))}
           {!recentLoading && recentError && (
             <Error message="Error loading posts" />
+          )}
+          {recentLoading && (
+            <>
+              <PostCardSkeleton />
+              <PostCardSkeleton />
+              <PostCardSkeleton />
+              <PostCardSkeleton />
+              <PostCardSkeleton />
+            </>
           )}
         </section>
       </main>

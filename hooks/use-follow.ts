@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export const useFollow = () => {
   const [data, setData] = useState<User[] | null>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {

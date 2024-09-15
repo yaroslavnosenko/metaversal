@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 export const useRecent = () => {
   const [data, setData] = useState<[Post, User][] | null>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {

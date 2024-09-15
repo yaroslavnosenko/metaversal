@@ -35,3 +35,7 @@ button.btn-solid {
 button.btn-solid:hover {
   background-position-y: -25px;
 }
+
+.skeleton {
+  @apply bg-[#EBEDEE] rounded-full;
+}
