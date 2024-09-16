@@ -13,9 +13,10 @@ export const useRecent = (limit: number) => {
 
   useEffect(() => {
     const controller = new AbortController()
-    setIsLoading(true)
 
     const fetch = async () => {
+      setError(false)
+      setIsLoading(true)
       try {
         const {
           data: { posts },
@@ -39,6 +40,7 @@ export const useRecent = (limit: number) => {
           users[index],
         ])
 
+        setError(false)
         setData((prev) => (prev ? [...prev, ...mergedData] : mergedData))
       } catch (err) {
         setError(true)
