@@ -20,7 +20,7 @@ export const PostCard = ({
   <article className="card shadow-sm">
     <div className="p-4 flex gap-3">
       <div className="min-w-10">
-        <Link href={'/' + id}>
+        <Link prefetch={false} href={'/' + id}>
           <Image
             className="avatar"
             src="/avatar.png"
@@ -32,7 +32,7 @@ export const PostCard = ({
       </div>
       <div className="grid grid-cols-1 gap-3">
         <div className="py-1 flex flex-col gap-1">
-          <Link href={'/' + id}>
+          <Link prefetch={false} href={'/' + id}>
             <h4 className="hover:underline cursor-pointer">
               {firstName} {lastName}
             </h4>
