@@ -19,6 +19,10 @@ const config: Config = {
           150: '#dfdfdf',
         },
       },
+      boxShadow: {
+        sm: '0 0 3px 0 rgba(26, 26, 26, 0.08)',
+        lg: '0 2px 10px 0 rgba(26, 26, 26, 0.1)',
+      },
     },
   },
   plugins: [],

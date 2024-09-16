@@ -17,7 +17,7 @@ export const PostCard = ({
   },
   user: { id, firstName, lastName, username },
 }: PostCardProps) => (
-  <article className="card">
+  <article className="card shadow-sm">
     <div className="p-4 flex gap-3">
       <div className="min-w-10">
         <Link href={'/' + id}>

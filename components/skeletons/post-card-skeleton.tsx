@@ -1,6 +1,6 @@
 export const PostCardSkeleton = () => {
   return (
-    <div className="card">
+    <div className="card shadow-sm">
       <div className="flex p-4 gap-4">
         <div className="skeleton w-10 h-10" />
         <div>

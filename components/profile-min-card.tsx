@@ -10,7 +10,7 @@ export const ProfileMinCard = ({
   user: { id, firstName, lastName, username },
 }: ProfileMinCardProps) => {
   return (
-    <div className="card p-4 flex items-center gap-3">
+    <div className="card p-4 flex items-center gap-3 shadow-sm">
       <Link href={'/' + id}>
         <Image
           className="avatar"

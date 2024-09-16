@@ -25,7 +25,7 @@ export default async function ProfilePage({ params: { id } }: PageProps) {
 
   return (
     <>
-      <Header title="Profile" />
+      <Header title="Profile" back />
       <main>
         {isError ? (
           <section>

@@ -19,7 +19,7 @@ export const ProfileCard = ({
   postsCount,
   likesCount,
 }: ProfileCardProps) => (
-  <div className="relative mt-10 sm:mt-0">
+  <div className="relative mt-10 sm:mt-0 shadow-sm rounded-2xl">
     <div className="card !rounded-b-none !border-b-0 h-16 bg-gradient-to-r from-[#ECE9FB] to-[#FDEDE7]" />
     <div className="card !rounded-none !border-t-0 p-6 pt-12 sm:pt-6 sm:pl-[170px]">
       <h1 className="mb-2 text-center sm:text-left">
@@ -54,7 +54,7 @@ export const ProfileCard = ({
     </div>
     <div className="absolute top-[-35px] flex justify-center w-full sm:left-[19px] sm:w-[130px] sm:top-[35px]">
       <Image
-        className="h-30 w-30 rounded-full border-[5px] border-white box-content"
+        className="h-30 w-30 rounded-full border-[5px] border-white box-content shadow-lg"
         src="/avatar.png"
         alt="avatar"
         width="120"
