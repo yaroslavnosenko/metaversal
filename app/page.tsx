@@ -24,7 +24,7 @@ export default function FeedPage() {
     next,
   } = useRecent(RECENT_LIMIT)
 
-  useScroll(0, () => {
+  useScroll(100, () => {
     if (!recentLoading) next()
   })
 
