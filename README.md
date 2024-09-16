@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Metaversal
+
+This project is built for Metaversal using [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com). It implements a user posts feed and user profiles, fetching data from an API and managing various states such as loading and errors. Data is cached both in HTTPS requests and local storage for efficiency.
+
+## Features
+
+- **User Posts Feed**: A feed of user posts fetched from an external API.
+- **User Profiles**: Displays user profile information, including posts associated with each user.
+- **Responsive UI**: Built using Tailwind CSS to ensure the design adapts across all screen sizes.
+- **Loading States**: Gracefully handled loading states to ensure a smooth user experience.
+- **Error States**: Informative error handling to display issues when data fetching fails.
+- **HTTPS Request Caching**: Utilizes caching strategies to minimize unnecessary requests.
+- **Local Storage Caching**: Caches data in local storage to improve performance and user experience.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/en/download/) installed on your system.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yaroslavnosenko/metaversal.git
+   cd metaversal
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+To run the project locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Caching
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **HTTPS Request Caching**: Data from the API is cached using built-in request caching to avoid repeated fetches.
+- **Local Storage**: User data is cached in the browser’s local storage for offline access and performance optimization.
 
-## Learn More
+## Error Handling
 
-To learn more about Next.js, take a look at the following resources:
+The application provides meaningful error messages if the data fetching fails or if there are issues with connectivity.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Optional Nice-to-Haves
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Server-Side Rendering (SSR)**: Server-side rendering is implemented for the profile page to improve performance and SEO. This ensures that user profile data is pre-rendered on the server before being sent to the client.
+- **App Deployment**: The application has been deployed on Vercel and is live at [https://metaversal-three.vercel.app/](https://metaversal-three.vercel.app/). Vercel’s platform offers seamless integration with Next.js.
