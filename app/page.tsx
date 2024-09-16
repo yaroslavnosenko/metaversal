@@ -42,7 +42,7 @@ export default function FeedPage() {
           {!suggestedLoading && suggestedError && (
             <Error message="Error loading posts" />
           )}
-          {suggestedLoading && (
+          {!suggestedLoading && (
             <>
               <PostCardSkeleton />
               <PostCardSkeleton />

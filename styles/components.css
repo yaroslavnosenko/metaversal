@@ -38,4 +38,14 @@ button.btn-solid:hover {
 
 .skeleton {
   @apply bg-[#EBEDEE] rounded-full;
+  background: linear-gradient(110deg, #ebedee, #f9fafa, #ebedee);
+  background-size: 500px 100%;
+  background-position-x: -500px;
+  animation: shine 1.3s infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: 0;
+  }
 }
