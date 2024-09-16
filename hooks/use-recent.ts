@@ -3,26 +3,32 @@ import { axios } from '@/utils'
 import { all } from 'axios'
 import { useEffect, useState } from 'react'
 
-export const useRecent = () => {
+export const useRecent = (limit: number) => {
+  const [skip, setSkip] = useState(0)
   const [data, setData] = useState<[Post, User][] | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<boolean>(false)
 
+  const next = () => setSkip((prev) => prev + 5)
+
   useEffect(() => {
     const controller = new AbortController()
+    setIsLoading(true)
 
     const fetch = async () => {
-      setIsLoading(true)
       try {
         const {
           data: { posts },
-        } = await axios.get('https://dummyjson.com/posts?limit=5', {
-          signal: controller.signal,
-        })
+        } = await axios.get(
+          `https://dummyjson.com/posts?limit=${limit}&skip=${skip}`,
+          {
+            signal: controller.signal,
+          }
+        )
 
         const users = await all<{ data: User }>(
           posts.map(({ userId }: Post) =>
-            axios.get('https://dummyjson.com/users/' + userId, {
+            axios.get(`https://dummyjson.com/users/${userId}`, {
               signal: controller.signal,
             })
           )
@@ -33,7 +39,7 @@ export const useRecent = () => {
           users[index],
         ])
 
-        setData(mergedData)
+        setData((prev) => (prev ? [...prev, ...mergedData] : mergedData))
       } catch (err) {
         setError(true)
       } finally {
@@ -45,7 +51,7 @@ export const useRecent = () => {
     return () => {
       controller.abort()
     }
-  }, [])
+  }, [skip, limit])
 
-  return { data, isLoading, error }
+  return { data, isLoading, error, next }
 }

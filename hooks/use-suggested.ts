@@ -12,7 +12,6 @@ export const useSuggested = () => {
     const controller = new AbortController()
 
     const fetch = async () => {
-      setIsLoading(true)
       try {
         const {
           data: { posts },
@@ -22,7 +21,7 @@ export const useSuggested = () => {
 
         const users = await all<{ data: User }>(
           posts.map(({ userId }: Post) =>
-            axios.get('https://dummyjson.com/users/' + userId, {
+            axios.get(`https://dummyjson.com/users/${userId}`, {
               signal: controller.signal,
             })
           )

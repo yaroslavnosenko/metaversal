@@ -2,7 +2,9 @@
 
 import { Error, Header, PostCard, ProfileMinCard } from '@/components'
 import { PostCardSkeleton, ProfileMinSkeleton } from '@/components/skeletons'
-import { useFollow, useRecent, useSuggested } from '@/hooks'
+import { useFollow, useRecent, useScroll, useSuggested } from '@/hooks'
+
+const RECENT_LIMIT = 3
 
 export default function FeedPage() {
   const {
@@ -19,7 +21,12 @@ export default function FeedPage() {
     data: recent,
     isLoading: recentLoading,
     error: recentError,
-  } = useRecent()
+    next,
+  } = useRecent(RECENT_LIMIT)
+
+  useScroll(0, () => {
+    if (!recentLoading) next()
+  })
 
   return (
     <>
@@ -67,21 +74,18 @@ export default function FeedPage() {
         </section>
         <section>
           <h2 className="text-black">Recent</h2>
-          {!recentLoading &&
-            recent &&
+          {recent &&
             recent.map(([post, user]) => (
-              <PostCard key={user.id} user={user} post={post} />
+              <PostCard key={post.id} user={user} post={post} />
             ))}
           {!recentLoading && recentError && (
             <Error message="Error loading posts" />
           )}
           {recentLoading && (
             <>
-              <PostCardSkeleton />
-              <PostCardSkeleton />
-              <PostCardSkeleton />
-              <PostCardSkeleton />
-              <PostCardSkeleton />
+              {new Array(RECENT_LIMIT).fill(null).map((_, idx) => (
+                <PostCardSkeleton key={idx} />
+              ))}
             </>
           )}
         </section>
